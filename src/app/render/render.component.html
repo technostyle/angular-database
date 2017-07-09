@@ -1,0 +1,67 @@
+<body>
+
+<!-- Input user form -->
+<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+<div class="container">
+  
+  <div class="form">
+    <span>User name</span>
+    <input type="text" formControlName="name">
+	  <div class="error" *ngIf="user.get('name').hasError('required') && user.get('name').touched">Name is required
+	  </div>
+  </div>
+ 
+  <div class="form">
+    <span>Password</span>
+    <input type="text" formControlName="password">
+	  <div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched">Password is required
+	  </div>
+  </div>
+
+  <div class="form">
+    <span>Profession</span>
+    <input type="text" formControlName="profession">
+	  <div class="error" *ngIf="user.get('profession').hasError('required') && user.get('profession').touched">Profession is required
+	  </div>
+  </div>
+
+  <div class="form">
+    <span>Id</span>
+    <input class="id" type="number" formControlName="id" ngModel validateId>
+	  <div class="error" *ngIf="user.get('id').hasError('validateId') && user.get('id').touched">
+	  	This id already exists
+	  </div>
+	  <div class="error" *ngIf="user.get('id').hasError('required') && user.get('id').touched">
+  		Id should be a number
+  	</div>
+  </div><br>
+
+  <button type="submit" class="submit-button" [disabled]="user.invalid">Add user</button>
+ 	
+</div><br>
+</form>
+<!-- End of Input user form -->
+<!-- ====================== -->
+
+<!-- Table of users -->
+<table>
+	<tr class="header" style="background-color: white;">
+	<td>name</td>
+		<td>password</td>
+		<td>profession</td>
+		<td>id</td>
+  <td width="5%">delete user</td>
+		<td width="5%">select user</td>
+	</tr>
+	<tr *ngFor="let user of users" [ngClass]="userSelected(user) ? 'select' : ''">
+		<td>{{user.name}}</td>
+		<td>{{user.password}}</td>
+		<td>{{user.profession}}</td>
+		<td>{{user.id}}</td>
+  <td><button type="button" class="delete" (click)="onDeleteClick(user)">❌</button></td> 
+		<td><button type="button" class="select" (click)="onSelectClick(user)">&#10004;</button></td> 
+</tr>
+</table>
+<!-- End of Table of users-->
+<!-- ==================== -->
+</body>

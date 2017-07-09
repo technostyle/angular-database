@@ -1,0 +1,90 @@
+/* Table */
+body {
+	font-family: tahoma, arial, sans-serif;
+	font-size: large;
+}
+
+table .header {
+	font-weight: bold;
+	color: #34b7f0;
+}
+table, td {
+  border: 2px solid #34b7f0;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+table tr:nth-child(odd) {
+  background-color: #eef3fd;
+}
+table tr:nth-child(even) {
+  background-color: #ccf1fb;
+}
+
+table tr:hover {
+	background: #4bbbb5;
+}
+
+
+/* End of table*/
+
+
+/* Input */
+.select {
+	border-radius: 5px;
+	color: green;
+	background-color: lightgreen;
+}
+
+.delete {
+	border-radius: 5px;
+	color: tomato;
+	background-color: pink;
+}
+
+
+.container {
+	margin: auto;
+	width: 40%;
+/*	border: solid aquamarine;*/
+}
+
+.form {
+	text-align: center;
+}
+
+input {
+	width: 40%;
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #ccf1fb;
+  transition: border 0.3s;
+  font-size: large;
+}
+input:focus {
+	border-bottom: solid 2px #4bbbb5;
+}
+
+.id {
+	width: 10%;
+}
+
+.error {
+	font-weight: bold;
+	color: tomato;
+}
+
+.submit-button {
+    position:relative;
+    left:30%;
+	width: 40%;
+	background-color: #4bbbb5;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+}
+
+/* End of input */
